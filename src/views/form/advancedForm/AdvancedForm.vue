@@ -53,6 +53,11 @@
       <a-button style="width: 100%; margin-top: 16px; margin-bottom: 8px" type="dashed" icon="plus" @click="newMember">新增成员</a-button>
     </a-card>
 
+ <a-card>
+
+<QuillEditor>  </QuillEditor>
+
+</a-card>
     <!-- fixed footer toolbar -->
     <footer-tool-bar :style="{ width: isSideMenu() && isDesktop() ? `calc(100% - ${sidebarOpened ? 256 : 80}px)` : '100%'}">
       <span class="popover-wrapper">
@@ -71,6 +76,7 @@
       </span>
       <a-button type="primary" @click="validate" :loading="loading">提交</a-button>
     </footer-tool-bar>
+    
   </div>
 </template>
 
@@ -78,6 +84,7 @@
 import RepositoryForm from './RepositoryForm'
 import TaskForm from './TaskForm'
 import FooterToolBar from '@/components/FooterToolbar'
+import QuillEditor from '@/components/Editor/QuillEditor'
 import { mixin, mixinDevice } from '@/utils/mixin'
 
 const fieldLabels = {
@@ -101,7 +108,8 @@ export default {
   components: {
     FooterToolBar,
     RepositoryForm,
-    TaskForm
+    TaskForm,
+    QuillEditor
   },
   data () {
     return {

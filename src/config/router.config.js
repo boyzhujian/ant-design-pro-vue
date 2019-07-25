@@ -39,6 +39,22 @@ export const asyncRouterMap = [
           }
         ]
       },
+ 
+    //editor
+    {
+      path:'/editor',
+      redirect:'/editor/quill-editor',
+      component:PageView,
+      meta:{title:'Editor',icon:'form'},
+      children:[
+        {
+          path:'/editor/quill-editor',
+          name : 'Quilleditor',
+          component:()=>import('@/components/Editor/QuillEditor'),
+          meta: {title:'QuillEditor'}
+        }
+      ]
+    }    ,
 
       // forms
       {
